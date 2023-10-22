@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     robot = DifferentialDriveSimulatedRobot(xs0, M2D) # instantiate the simulated robot object
 
-    kSteps = 5000 # number of simulation steps
+    kSteps = 1000 # number of simulation steps
     xsk_1 = xs0 = np.zeros((6, 1))  # initial simulated robot pose
     index = [IndexStruct("x", 0, None), IndexStruct("y", 1, None), IndexStruct("yaw", 2, 1)] # index of the state vector used for plotting
 

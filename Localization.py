@@ -68,6 +68,10 @@ class Localization:
         for self.k in range(self.kSteps):
             xsk = self.robot.fs(xsk_1, usk)  # Simulate the robot motion
 
+            # Change sign of desired angular velocity to reach 8-figure trajectory
+            if xsk[0]*xsk_1[0] <= 0.0 and xsk[0] <= xsk_1[0]:
+                usk[1] = -usk[1]
+                
             uk = self.GetInput()  # Get the input from the robot
             self.xk = self.Localize(xk_1,uk)  # Localize the robot
 
